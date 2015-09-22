@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "JFScrollView.h"
+#import "JFContainerView.h"
 
 @interface AppDelegate ()
 
@@ -22,9 +22,9 @@
     
     UIViewController *vc = [[UIViewController alloc] init];
     vc.view.backgroundColor = [UIColor whiteColor];
-    JFScrollView *scrollView = [[JFScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-
-    [vc.view addSubview:scrollView];
+    
+    JFContainerView *containerView = [[JFContainerView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 400)];
+    [vc.view addSubview:containerView];
     
     self.window.rootViewController = vc;
     [self.window makeKeyAndVisible];

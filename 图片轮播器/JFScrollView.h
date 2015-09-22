@@ -10,4 +10,8 @@
 
 @interface JFScrollView : UIScrollView
 
+@property (nonatomic, assign) NSInteger page;
+
+@property(copy,nonatomic) void(^pagBlock)(NSInteger page);
+
 @end

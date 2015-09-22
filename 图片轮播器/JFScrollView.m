@@ -11,6 +11,7 @@
 @interface JFScrollView () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIPageControl *pageControl;
 
 @end
 
@@ -19,14 +20,20 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     
     self = [super initWithFrame:frame];
-    
-    self.pagingEnabled = YES;
-    self.showsHorizontalScrollIndicator = false;
+
+    [self setScrollView];
     [self loadImage];
-    [self addPageControl];
+    return self;
+}
+
+// 设置scrollView
+- (void)setScrollView {
     
     self.delegate = self;
-    return self;
+    self.pagingEnabled = YES;
+    self.showsHorizontalScrollIndicator = false;
+    self.contentSize = CGSizeMake(self.bounds.size.width * 5, 200);
+    self.bounces = false;
 }
 
 // 添加图片
@@ -34,32 +41,38 @@
     
     NSArray *images = @[@"bbqner", @"zghsy", @"mmgw", @"jxtz", @"ertsd"];
     
-    CGFloat height = 200; //[UIScreen mainScreen].bounds.size.height;
-    CGFloat width = [UIScreen mainScreen].bounds.size.width ;
+//    CGFloat height = 200; //[UIScreen mainScreen].bounds.size.height;
+//    CGFloat width = [UIScreen mainScreen].bounds.size.width ;
+    CGRect imageViewFrame = self.bounds;
+    
     // 添加图片
     for (int i=0; i < images.count; ++i) {
-        self.contentSize = CGSizeMake(width * i + width, height);
         
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(width * i , 0, width, height)];
+        UIImageView *imageView = [[UIImageView alloc] init];
         imageView.image = [UIImage imageNamed:images[i]];
-
+        
+        CGFloat imagex = imageViewFrame.size.width * i;
+        imageViewFrame.origin.x = imagex;
+        imageView.frame = imageViewFrame;
+        
         [self addSubview:imageView];
     }
 }
 
-// 添加pageControl
-- (void)addPageControl {
+#pragma mark - 代理方法
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    UIPageControl *pageControl = [[UIPageControl alloc] init];
-    pageControl.frame = CGRectMake(280, 170, 80, 30);
-    //    pageControl.backgroundColor = [UIColor redColor];
+    CGFloat offSetX = self.contentOffset.x;
     
-    pageControl.numberOfPages = 5;
+    NSInteger page = round(offSetX / self.bounds.size.width);
     
-    [self addSubview:pageControl];
-//    [self bringSubviewToFront:pageControl];
+    if (self.pagBlock) {
+        self.pagBlock(page);
+    }
+//    NSLog(@"%zd",self.page);
     
 }
+
 
 
 @end

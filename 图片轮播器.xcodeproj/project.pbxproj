@@ -12,6 +12,7 @@
 		840D6C371BB0674D00ECC317 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840D6C361BB0674D00ECC317 /* Assets.xcassets */; };
 		840D6C3A1BB0674D00ECC317 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840D6C381BB0674D00ECC317 /* LaunchScreen.storyboard */; };
 		840D6C431BB0689C00ECC317 /* JFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 840D6C421BB0689C00ECC317 /* JFScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		840D6C461BB0DFD500ECC317 /* JFContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 840D6C451BB0DFD500ECC317 /* JFContainerView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		840D6C3B1BB0674D00ECC317 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		840D6C411BB0689C00ECC317 /* JFScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFScrollView.h; sourceTree = "<group>"; };
 		840D6C421BB0689C00ECC317 /* JFScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFScrollView.m; sourceTree = "<group>"; };
+		840D6C441BB0DFD500ECC317 /* JFContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFContainerView.h; sourceTree = "<group>"; };
+		840D6C451BB0DFD500ECC317 /* JFContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFContainerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 				840D6C2E1BB0674D00ECC317 /* AppDelegate.m */,
 				840D6C411BB0689C00ECC317 /* JFScrollView.h */,
 				840D6C421BB0689C00ECC317 /* JFScrollView.m */,
+				840D6C441BB0DFD500ECC317 /* JFContainerView.h */,
+				840D6C451BB0DFD500ECC317 /* JFContainerView.m */,
 				840D6C361BB0674D00ECC317 /* Assets.xcassets */,
 				840D6C381BB0674D00ECC317 /* LaunchScreen.storyboard */,
 				840D6C3B1BB0674D00ECC317 /* Info.plist */,
@@ -149,6 +154,7 @@
 			files = (
 				840D6C2F1BB0674D00ECC317 /* AppDelegate.m in Sources */,
 				840D6C431BB0689C00ECC317 /* JFScrollView.m in Sources */,
+				840D6C461BB0DFD500ECC317 /* JFContainerView.m in Sources */,
 				840D6C2C1BB0674D00ECC317 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
